@@ -1,0 +1,46 @@
+spring:
+ application:
+   name: feedback
+ datasource:
+  url : jdbc:h2:mem:testdb
+  driverClassName: org.h2.Driver
+  username: sa
+  password: sa
+ jpa:
+  database-platform: org.hibernate.dialect.H2Dialect
+  
+  
+ h2:
+  console:
+   enabled: true
+
+    
+server:
+ port: 8085
+  
+
+ 
+# ssl:
+ #   key-alias:  employeemgmt
+ #   key-store:  classpath:valuela.jks
+ #   key-store-type: JKS
+ #   key-password: changeit
+ 
+eureka:
+  instance:
+  #  nonSecurePortEnabled: false
+   # securePortEnabled: true
+    prefer-ip-address: true
+    
+  client:
+   register-with-eureka: true
+   fetch-registry: true
+   service-url:
+    defaultZone:  http://localhost:8762/eureka
+management:
+ endpoints:
+    web:
+      exposure:
+        include: '*'
+
+ 

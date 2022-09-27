@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+    
+info:
+ app:
+  name: Gateway Server
+  description: Employee Managment Gateway Server Application
+  version: 1.0
+  
+  
+eureka:
+  instance:
+    prefer-ip-address: true
+    
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:   
+      defaultZone:  http://localhost:8762/eureka/
+      
+server:
+ port: 8087
+ 
+management:
+ endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+
+      
+
+  
